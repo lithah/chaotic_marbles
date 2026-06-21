@@ -1,4 +1,4 @@
-<img width="1600" height="400" alt="pixil-frame-0(54)" src="https://github.com/user-attachments/assets/f92922d6-6b7f-4fc5-94c7-621d3dc703c5" />
+<img width="1024" height="512" alt="pixil-frame-0" src="https://github.com/user-attachments/assets/9f382420-b973-4fc3-92a9-724bfaf4da82" />
 
 # Chaotic Marbles
 **Breakout like game made to learn how to LÖVE <3**
