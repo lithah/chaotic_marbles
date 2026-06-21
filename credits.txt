@@ -1,0 +1,21 @@
+-------------Credits------------------------
+Music = Teknoaxe (CC BY 4.0)
+- "Relaxing Metropolis" — TeknoAXE 
+ -- https://www.youtube.com/watch?v=3Gc4mSpnTxM
+
+- "Cruising the Night Sky" — TeknoAXE
+ - https://www.youtube.com/watch?v=EsbzPHz_scY&list=RDEsbzPHz_scY
+
+Graphics = lithah
+
+Code = 90% humanmade/10% AI (Gemini)
+
+Libraries = anim8 (MIT), push (MIT) & windfield (see source file)
+ -- https://github.com/a327ex/windfield/
+ -- https://github.com/Ulydev/push
+ -- https://github.com/kikito/anim8
+
+Engine = love2d (ZLIB)
+ -- https://love2d.org/
+
+SFX = sfxr.me (jsfxr)

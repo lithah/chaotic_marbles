@@ -15,6 +15,9 @@ function w.menuDraw(dt)
  love.graphics.draw(button.play,370,450,0,3,3)
   love.graphics.draw(sprites.settings,740,540,0,1,1) 
   love.graphics.draw(button.back,20,540,0,1,1) 
+  if autosave <= 0 then
+love.graphics.print("Saved!",20,20)
+end
   end
   
 
@@ -23,6 +26,7 @@ if powerups.melt == true or powerups.enlarge == true or powerups.laser == true t
    love.graphics.setColor(1,0,0,1)
     love.graphics.print("PowerUp: ".. powerups.message,10,560)
  love.graphics.setColor(1,1,1,1)
+ 
 end
     love.graphics.print("Score: ".. score,10,0)
   love.graphics.print("Lives: ".. lives,10,30)
@@ -39,7 +43,14 @@ if msgbg >= 0 and creatorTools.status == true then
  love.graphics.print("Press 'lshift' to create a block",280,500,0,.5,.5)
   love.graphics.setColor(1,1,1,1)
 end
-
+  if savedShowTimer <= 3 then
+      love.graphics.setColor(1,1,0,1)
+love.graphics.print("Saving",690,10)
+  love.graphics.setColor(1,1,1,1)
+  if savedShowTimer <= 0 then
+  savedShowTimer = 4
+  end
+end
   
   end
   if menu.screen == 4 then
@@ -66,7 +77,6 @@ love.graphics.print("Control Mode: "..paddle.moveable,20,160)
 love.graphics.print("Creator Tools: "..creatorTools.msg,20,200)
 love.graphics.print("Mute",20,240)
 love.graphics.setColor(1,1,1,1)
-
 
   end
 

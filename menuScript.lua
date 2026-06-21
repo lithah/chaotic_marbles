@@ -41,19 +41,21 @@ if love.mouse.isDown(1) and menu.screen == 1 and mPosX >= 20 and mPosX <=60 and 
 love.event.quit()
 end
 
-if level.unlocked >= 1 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 80 and mPosX <=190 and mPosY >=30 and mPosY <= 90  then
+-- ROW 1st
+if level.unlocked >= 1 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 80 and mPosX <=190 and mPosY >=30 and mPosY <= 90 then
   menu.screen = 3
 gen.levelGen(1)
 level.latest = 1
 sfx.click:play()
-
 end
+
 if level.unlocked >= 2 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 210 and mPosX <=320 and mPosY >=30 and mPosY <= 90 then
   menu.screen = 3
 gen.levelGen(2)
 level.latest = 2
 sfx.click:play()
 end
+
 if level.unlocked >= 3 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 340 and mPosX <=440 and mPosY >=30 and mPosY <= 90 then
   menu.screen = 3
 gen.levelGen(3)
@@ -75,39 +77,79 @@ level.latest = 5
 sfx.click:play()
 end
 
-if level.unlocked >= 6 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 80 and mPosX <=190 and mPosY >=110 and mPosY <= 180  then
+--ROW 2nd
+
+if level.unlocked >= 6 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 80 and mPosX <=190 and mPosY >=110 and mPosY <= 170  then
   menu.screen = 3
 gen.levelGen(6)
 level.latest = 6
 sfx.click:play()
 
 end
-if level.unlocked >= 7 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 210 and mPosX <=320 and mPosY >=110 and mPosY <= 180 then
+if level.unlocked >= 7 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 210 and mPosX <=320 and mPosY >=110 and mPosY <= 170 then
   menu.screen = 3
 gen.levelGen(7)
 level.latest = 7
 sfx.click:play()
 end
-if level.unlocked >= 8 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 340 and mPosX <=440 and mPosY >=110 and mPosY <= 180 then
+if level.unlocked >= 8 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 340 and mPosX <=440 and mPosY >=110 and mPosY <= 170 then
   menu.screen = 3
 gen.levelGen(8)
 level.latest = 8
 sfx.click:play()
 end
 
-if level.unlocked >= 9 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 470 and mPosX <=560 and mPosY >=110 and mPosY <= 180 then
+if level.unlocked >= 9 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 470 and mPosX <=560 and mPosY >=110 and mPosY <= 170 then
   menu.screen = 3
 gen.levelGen(9)
 level.latest = 9
 sfx.click:play()
 end
 
-if level.unlocked >= 10 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 600 and mPosX <=680 and mPosY >=110 and mPosY <= 180 then
+if level.unlocked >= 10 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 600 and mPosX <=680 and mPosY >=110 and mPosY <= 170 then
   menu.screen = 3
 gen.levelGen(10)
 level.latest = 10
 sfx.click:play()
 end
+
+--ROW 3rd
+
+if level.unlocked >= 11 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 80 and mPosX <=190 and mPosY >= 190 and mPosY <= 250 then
+  menu.screen = 3
+gen.levelGen(11)
+level.latest = 11
+sfx.click:play()
+end
+
+if level.unlocked >= 12 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 210 and mPosX <=320 and mPosY >=190 and mPosY <= 250 then
+  menu.screen = 3
+gen.levelGen(12)
+level.latest = 12
+sfx.click:play()
+end
+if level.unlocked >= 13 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 340 and mPosX <=440 and mPosY >=190 and mPosY <= 250 then
+  menu.screen = 3
+gen.levelGen(13)
+level.latest = 13
+sfx.click:play()
+end
+
+if level.unlocked >= 14 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 470 and mPosX <=560 and mPosY >=190 and mPosY <= 250 then
+  menu.screen = 3
+gen.levelGen(9)
+level.latest = 9
+sfx.click:play()
+end
+
+if level.unlocked >= 15 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 600 and mPosX <=680 and mPosY >=190 and mPosY <= 250 then
+  menu.screen = 3
+gen.levelGen(10)
+level.latest = 10
+sfx.click:play()
+end
+
+
 
 if destroyer.allowdisable == 1 then -- escape key script ---------------------------------------------
     menu.screen = 2
@@ -191,6 +233,5 @@ end
 if tba <= 1 then
   tba = 0
 end
-
 end
 return w

@@ -42,7 +42,7 @@ menu.sprite2 = love.graphics.newImage('images/menu2.png')
 button = {}
 
 music.one = love.audio.newSource('music/Megalopolis_Relaxing_Teknoaxe.mp3', "stream")
-music.two = love.audio.newSource('music/Alexvnder - Underwater.mp3', "stream")
+music.two = love.audio.newSource('music/Cruising_the_Night_Sky.mp3', "stream")
 if music.selection == 1 then
 music.one:play()
 elseif music.selection == 2 then
@@ -135,6 +135,7 @@ tba = 1.3 -- Time before Action; made to prevent the game from autostarting when
 acb = 0 -- After collision bounce; to prevent the ball from penetrating the stucture in every hit
 -- to use it; detect when too much blocks has been broken without colliding with the top or the sides
 -- this has been done yet, im way to lazy to delete this, and it was 2:18 AM
+savedShowTimer = 4
 
 menu.created = 0
 block.selection = math.random(1,4)
@@ -627,23 +628,33 @@ end
 
 end
 autosave = autosave - dt
+if autosave <= 4 then
+    savedShowTimer = savedShowTimer - dt
+end
 if autosave <= 0 then
   saveGame()
+        if creatorTools.status == false then
   print ("Saved!")
+        end
   autosave = 20
 end
 world:update(dt)
 end
 
 function saveGame()
+
   local f= io.open("save-values","w")
 if f then
+  --level unlocked
   f:write(tostring(level.unlocked))
    f:write("\n")
+   --score
  f:write(tostring(score))
     f:write("\n")
+    --lives
      f:write(tostring(lives))
     f:write("\n")
+    --paddle movement config
        f:write(tostring(paddle.moveable))
   f:close()
 else
@@ -724,9 +735,13 @@ end
 
 end
 
--- TODO: hacer el codigo independiente de tus fps;
+function love.conf(t)
+  t.window.title = "Chaotic Marbles" 
+  t.console = true
+end
 
--- averiguar el scrolling hacia arriba (quisas pendiente, depende direccion proyecto),
+
+-- TODO: 
 
 -- mas niveles. 
 
