@@ -4,6 +4,7 @@
 **Breakout like game made to learn how to LÖVE <3**
 
 I am trying to understand and learn how to code with love2d; and this project shows the progress made with it!
+-- Check out credits.txt!
 
 ## Currently Available
 - Menu
@@ -16,7 +17,6 @@ I am trying to understand and learn how to code with love2d; and this project sh
 ## To do
 - More levels
 - Pause menu
-- credits.txt
 - Graphic overhaul
 
 ## AI WAS USED DURING THIS PROJECT (coding only)
