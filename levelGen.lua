@@ -82,7 +82,7 @@ if lvl == 1 then
         block["hitboxdownn" .. i]:setCollisionClass("blockdown")
         block["hitboxdownn" .. i]:setType("static") 
                 _G["blockl" .. i .. "exist"] = true 
-
+                                                            
         end
         end
 

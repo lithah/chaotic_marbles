@@ -26,10 +26,15 @@ if powerups.melt == true or powerups.enlarge == true or powerups.laser == true t
    love.graphics.setColor(1,0,0,1)
     love.graphics.print("PowerUp: ".. powerups.message,10,560)
  love.graphics.setColor(1,1,1,1)
- 
+
+end
+
+if menu.screen == 3 then
+      love.graphics.draw(sprites.statbar,0,0,0,4,4)
 end
     love.graphics.print("Score: ".. score,10,0)
   love.graphics.print("Lives: ".. lives,10,30)
+     love.graphics.setColor(1,1,1,1)
   if love.keyboard.isDown("space") then
 msgbg = -1
   end

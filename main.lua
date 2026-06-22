@@ -1,16 +1,22 @@
     anim8 = require "lib/anim8"
     wf = require "lib/windfield"
-    bouncer = require "ballBounce"
+    bouncer = require "levelBallbounce"
     gen = require "levelGen"
-    destroy = require "blockDestroyer"
+    destroy = require "levelBlockdestroyer"
     UI = require "menuScript"
     UIdraw = require "menuDraw"
-    blockcolocator = require "drawingLvl"
-    bufflogic = require "powerup"
+    blockcolocator = require "levelDraw"
+    bufflogic = require "levelPowerup"
 
       math.randomseed(os.time())
 
+      function love.conf()
+  t.window.title = "Chaotic Marbles" 
+  t.console = true
+end
+
 function love.load()
+  tbx = 0.001
       world = wf.newWorld(100,100, true)
     world:addCollisionClass("ball")
     world:addCollisionClass("button", {ignores = {"ball"}})
@@ -80,7 +86,6 @@ ball = {}
 
 
 
-
 setter = {}
 setter.isDone = false
 setter.sprite = ball.sprite
@@ -92,6 +97,7 @@ clicked = false
 
 bg = {}
 bg.one = love.graphics.newImage('images/bg1.png')
+bg.one:setFilter("nearest","nearest")
 bg.two = love.graphics.newImage('images/bg2.png')
   bg.selection = math.random(1,2)
 
@@ -157,6 +163,8 @@ sprites.laser = love.graphics.newImage('images/laser.png')
 sprites.paddle = love.graphics.newImage('images/paddle.png')
 sprites.paddleEnlarge = love.graphics.newImage('images/enlarge.png')
 sprites.unlockedButton = love.graphics.newImage('images/unlockedButton.png')
+sprites.statbar = love.graphics.newImage('images/statbar.png')
+
 
 level = {}
  level.detect = 0
@@ -205,7 +213,9 @@ end
 
 
 function love.update(dt) ----------------------------------------------------------------------------
-if laser.hitbox then
+
+
+  if laser.hitbox then
 lPosX,lPosY = laser.hitbox:getPosition()
 end
   if paddle.moveable == "keyboard" and paddle.hitbox2 and menu.screen == 3 then
@@ -310,7 +320,8 @@ music.one:play()
 
 
   
-  if destroyer.created == 0 and love.keyboard.isDown("escape") then
+  if destroyer.created == 0 and love.keyboard.isDown("escape") and menu.screen == 3 then
+        sfx.select:play()
  destroyer.hitbox = world:newRectangleCollider(0, 0,800,600)
   destroyer.hitbox:setCollisionClass("destroyer")
   destroyer.hitbox:setFixedRotation(true)
@@ -385,6 +396,10 @@ function BlockColor()
 block.selection = math.random(1,4)
 end
 
+function BGchange()
+bg.selection = math.random(1,2)
+end
+
 if block.selection == 1 then 
 block.sprite = love.graphics.newImage('images/block1.png')
 elseif block.selection == 2 then 
@@ -403,6 +418,12 @@ paddle.hitbox2:destroy()
 paddle.hitbox3:destroy()
   end
 
+if paddle.hitbox1 and pPosX >= 700 then
+pdPosX = 700
+end
+if paddle.hitbox1 and pPosX <= 0 then
+pdPosX = 0
+end
 paddle.hitbox1 = world:newRectangleCollider(mPosX-30,410+60, 20,20)
 paddle.hitbox2 = world:newRectangleCollider(mPosX,410+60, 40,20)
 paddle.hitbox3 = world:newRectangleCollider(mPosX+30,410+60, 20,20)
@@ -587,7 +608,15 @@ destroyer.created = 1
   lives = 3
     end
 
-if blockDestroyed == blockTotal and level.latest == level.unlocked then
+    if level.latest == level.unlocked then
+levelUnlockable = true
+    else
+      levelUnlockable = false
+    end
+
+
+
+if blockDestroyed == blockTotal then
   ball.hitbox:destroy()
   blockDestroyed = 0
   sfx.win:play()
@@ -596,9 +625,11 @@ if blockDestroyed == blockTotal and level.latest == level.unlocked then
   ball.created = 0
   clicked = false
   level.detect = level.detect + 1
-  gen.levelGen(level.detect+1)
+  gen.levelGen(level.detect)
   BlockColor()
+  if levelUnlockable == true then
   level.unlocked = level.unlocked + 1
+  end
   level.latest = level.latest + 1
 
 end
@@ -733,20 +764,20 @@ end
 end
 
 
+
 end
 
-function love.conf(t)
-  t.window.title = "Chaotic Marbles" 
-  t.console = true
-end
+
 
 
 -- TODO: 
+
+-- overhaul grafico (en proceso )
+-- que falta del overhaul = shaders leves, remasterizar el menu de configuraciones, terminar los 
+-- niveles de decorar
 
 -- mas niveles. 
 
 -- debuffs
 
 -- MOBILE SUPPORT
-
--- overhaul grafico
