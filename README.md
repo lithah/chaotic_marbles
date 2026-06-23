@@ -8,8 +8,8 @@ I am trying to understand and learn how to code with love2d; and this project sh
 
 ## Currently Available
 - Menu
-- Level Creator! (beta functionality; but works for the task)
-- 13 Levels (some done, but all playable!)
+- Level Creator!
+- 15 Levels (some done, but all playable!)
 - Powerups! (Enlarge, Laser, Melt, Extra life)
 - Settings
 - SFX & Music (by TeknoAxe, check it out!)
@@ -17,7 +17,8 @@ I am trying to understand and learn how to code with love2d; and this project sh
 ## To do
 - More levels
 - Pause menu
-- Graphic overhaul
+- Shaders
+- Config rework
 
 ## AI WAS USED DURING THIS PROJECT (coding only)
 Where it was used can be read in the code, i oppose to AI usage; and the fact that i used AI to use something is a fact im not proud of; but it was only used to resume code that i didn't know how to optimise, i hope in the near future i can reduce AI usage until i don't need it.
