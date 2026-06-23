@@ -183,6 +183,11 @@ if love.keyboard.isDown("escape") and menu.screen == 1 and tbx == 2 then
 love.event.quit()
 end
 
+if love.keyboard.isDown("escape") and menu.screen == 2 and tbx == 0.001 then
+menu.screen = 1
+sfx.select:play()
+end
+
 if love.keyboard.isDown("escape") and menu.screen == 4 and tbx == 3 then
 menu.screen = 1
 sfx.select:play()
@@ -247,10 +252,10 @@ if love.keyboard.isDown("lshift") and creatorTools.regularizer >= 0 and menu.scr
     local stX = 180
     local stY = 140
 
-    for j = 0, 6 do
-        for i = 0, 6 do
-            local xX = stX + (j * clWidth)
-            local yY = stY + (i * rwHeight)
+    for o = 0, 6 do
+        for r = 0, 6 do
+            local xX = stX + (o * clWidth)
+            local yY = stY + (r * rwHeight)
 
             if mPosX >= xX and mPosX < xX + clWidth and mPosY >= yY and mPosY < yY + rwHeight then
                 creatorTools.spriteID = creatorTools.spriteID + 1

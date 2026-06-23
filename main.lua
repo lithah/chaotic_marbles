@@ -368,6 +368,7 @@ os.remove("save-values")
 end
 
 if love.keyboard.isDown("lshift") and ctu == 0.02 and creatorTools.status == false then
+  creatorTools.spriteID = 0
 creatorTools.status = true
 if creatorTools.mode == 1 then
 creatorTools.msg = "build"
@@ -394,6 +395,7 @@ end
 
 
 if love.keyboard.isDown("z") and ctu == 0.02 and creatorTools.status == true then
+    creatorTools.spriteID = 0
 creatorTools.mode = 1
 creatorTools.msg = "build"
 sfx.select:play()
@@ -405,6 +407,7 @@ ctu = ctu - dt
 end
 
 if love.keyboard.isDown("x") and ctu == 0.02 and creatorTools.status == true then
+    creatorTools.spriteID = 0
 creatorTools.mode = 2
 creatorTools.msg = "decorate"
 sfx.select:play()
@@ -835,7 +838,7 @@ love.graphics.draw(sprites.powerups,pwPosX ,pwPosY,0,2,2,4,4)
 world:draw()
 end
 if level.detect then
-if level.detect >= 5 and level.detect <= 999 and menu.screen == 3 then
+if level.detect >= 8 and level.detect <= 999 and menu.screen == 3 then
 world:draw()
 end
 end
