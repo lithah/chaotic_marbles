@@ -16,7 +16,6 @@
 end
 
 function love.load()
-  tbx = 0.001
       world = wf.newWorld(100,100, true)
     world:addCollisionClass("ball")
     world:addCollisionClass("button", {ignores = {"ball"}})
@@ -164,6 +163,7 @@ sprites.paddle = love.graphics.newImage('images/paddle.png')
 sprites.paddleEnlarge = love.graphics.newImage('images/enlarge.png')
 sprites.unlockedButton = love.graphics.newImage('images/unlockedButton.png')
 sprites.statbar = love.graphics.newImage('images/statbar.png')
+sprites.frame = love.graphics.newImage('images/cTframe.png')
 
 
 level = {}
@@ -182,6 +182,18 @@ creatorTools.status = false
 creatorTools.msg = "false"
 creatorTools.regularizer = 0.002
 creatorTools.blockID = 0
+creatorTools.spriteID = 0
+creatorTools.mode = 1
+
+decorX = {}
+decorY = {}
+
+
+btbdX = 0 --bout' to be drawn X
+-- this, while using creator tools decorating mode, defines the position of the blocks you see
+btbdY = 0 --bout' to be drawn Y
+
+ctm = .002 -- Creator tools mode regularizer; does the same as the following (this is funny on certain countries)
 ctu = .002 -- Creator tools unlock; prevents spamming of the key; a workaround used all round this 
 --game because i haven't figured another way to do it lol.
 msd = .002 -- Music and Sound Definer; prevents spamming of the key; a workaround used all round this 
@@ -201,6 +213,7 @@ pwe = 10 -- powerup Enlarge duration
 pwl = 5 -- powerup Laser duration
 pwluv = false
 tbd = 1
+tbx = 0.001
 laser = {}
 loadGame()
 autosave = 20
@@ -356,8 +369,46 @@ end
 
 if love.keyboard.isDown("lshift") and ctu == 0.02 and creatorTools.status == false then
 creatorTools.status = true
-creatorTools.msg = "true"
+if creatorTools.mode == 1 then
+creatorTools.msg = "build"
+else
+  creatorTools.msg = "decorate"
+end
 sfx.select:play()
+print ("you've selected creator tools; select witch tool will you use:")
+print ("press 'z' for building a level (1), press 'x' for decorating one (2)")
+print ("current mode is: "..creatorTools.msg)
+ctu = ctu - dt
+end
+
+if love.keyboard.isDown("lshift") and ctu == 0.02 and creatorTools.status == true then
+creatorTools.status = false
+creatorTools.msg = "false"
+sfx.select:play()
+if ctm == 0.002 then
+print ("current mode is: "..creatorTools.msg)
+ctm = ctm - dt
+end
+ctu = ctu - dt
+end
+
+
+if love.keyboard.isDown("z") and ctu == 0.02 and creatorTools.status == true then
+creatorTools.mode = 1
+creatorTools.msg = "build"
+sfx.select:play()
+if ctm == 0.002 then
+print ("current mode is: "..creatorTools.msg)
+ctm = ctm - dt
+end
+ctu = ctu - dt
+end
+
+if love.keyboard.isDown("x") and ctu == 0.02 and creatorTools.status == true then
+creatorTools.mode = 2
+creatorTools.msg = "decorate"
+sfx.select:play()
+print ("current mode is: "..creatorTools.msg)
 ctu = ctu - dt
 end
 
@@ -367,8 +418,9 @@ creatorTools.msg = "false"
 sfx.select:play()
 ctu = ctu - dt
 end
-if ctu <= 1 and not love.keyboard.isDown("lshift") then
+if ctu <= 1 and not love.keyboard.isDown("lshift") and not love.keyboard.isDown("z") and not love.keyboard.isDown("x") then
   ctu = 0.02
+  ctm = 0.002
 end
 
   if pmtimer <= .01 and pmtimer >=0 then
@@ -669,6 +721,26 @@ if autosave <= 0 then
         end
   autosave = 20
 end
+if ctpm == 0 or ctmp == nil and menu.screen == 2 then
+ctpm = 1
+end
+if creatorTools.status == true and menu.screen == 3 and ctpm == 1 then
+print ("--- Welcome to the level creator. ---")
+print ("Press 'shift' to place blocks")
+print ("IMPORTANT: the order of placement is important, ")
+print ("you must have the same order for building and drawing,")
+print ("else the blocks wont be destroyed properly")
+
+if creatorTools.mode == 1 then
+print ("as you've selected build mode, the console's output will be hitboxes,")
+print( "you may copy them into levelGen.lua following the preset that's there.")
+elseif creatorTools.mode == 2 then
+print ("as you've selected decorate mode, the console's output will be sprites,")
+print( "you may copy them into levelDraw.lua following the preset that's there.")
+end
+print("----- copy the following -----")
+ctpm = ctpm - dt
+end
 world:update(dt)
 end
 
@@ -747,6 +819,11 @@ end
 end
 if creatorTools.status == true then
 love.graphics.draw(block.sprite,mPosX, mPosY,0,1,1)
+if menu.screen == 3 then
+for i = 1, creatorTools.spriteID do -- decorX & Y was asisted by AI (grok), althought most of this was humanmade
+    love.graphics.draw(block.sprite, decorX[i], decorY[i], 0, 1, 1)
+end
+end
 end
  if ball.created == 1 then
  love.graphics.draw(ball.sprite,ballX,ballY,0,.45,.45,10,10)
@@ -758,7 +835,7 @@ love.graphics.draw(sprites.powerups,pwPosX ,pwPosY,0,2,2,4,4)
 world:draw()
 end
 if level.detect then
-if level.detect >= 4 and menu.screen == 3 then
+if level.detect >= 5 and level.detect <= 999 and menu.screen == 3 then
 world:draw()
 end
 end
@@ -774,7 +851,7 @@ end
 
 -- overhaul grafico (en proceso )
 -- que falta del overhaul = shaders leves, remasterizar el menu de configuraciones, terminar los 
--- niveles de decorar
+-- niveles de decorar, añadir cuadro guia para creador de niveles
 
 -- mas niveles. 
 

@@ -45,6 +45,7 @@ if msgbg >= 0 and creatorTools.status == false then
 end
 if msgbg >= 0 and creatorTools.status == true then
    love.graphics.setColor(1,1,1,.4)
+
  love.graphics.print("Press 'lshift' to create a block",280,500,0,.5,.5)
   love.graphics.setColor(1,1,1,1)
 end
@@ -56,6 +57,13 @@ love.graphics.print("Saving",690,10)
   savedShowTimer = 4
   end
 end
+    if creatorTools.status == true then
+      love.graphics.setColor(1,0,0,1)
+love.graphics.print(creatorTools.msg,20,560)
+      love.graphics.setColor(1,1,1,0.4)
+       love.graphics.draw(sprites.frame,180,140,0,1,1)
+       love.graphics.setColor(1,1,1,1)
+  end
   
   end
   if menu.screen == 4 then
@@ -68,6 +76,7 @@ end
    love.graphics.print("'keyboard' allows control of the paddle with wasd keys",450,180,0,.4,.4)
    love.graphics.print("'mouse' allows control of the paddle with mouse cursor",450,190,0,.4,.4)
    love.graphics.print("Press 'lshift' to enter level creator mode",450,210,0,.5,.5)
+    love.graphics.print("A terminal is required for this to work properly",450,230,0,.4,.4)
    love.graphics.print("Press 'm' to mute",450,250,0,.5,.5)
       love.graphics.setColor(1,1,0,1)
 love.graphics.print("Press 'del' to delete you save",440,520,0,0.8,0.8)

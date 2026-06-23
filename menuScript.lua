@@ -156,7 +156,7 @@ if destroyer.allowdisable == 1 then -- escape key script -----------------------
   clicked = false
 end
 
-print(tbx)
+
 if not love.keyboard.isDown("escape") and menu.screen == 1 then
 tbx = 2
 end
@@ -168,8 +168,13 @@ if not love.keyboard.isDown("escape") and menu.screen == 4 then
 tbx = 3
 end
 
-if love.keyboard.isDown("escape") and menu.screen == 2 then
-menu.screen = 1
+if love.keyboard.isDown("c") and menu.screen == 2 then
+menu.screen = 4
+sfx.select:play()
+end
+
+if love.keyboard.isDown("c") and menu.screen == 1 then
+menu.screen = 4
 sfx.select:play()
 end
 
@@ -193,9 +198,10 @@ level.detect = 1000
 lvl = 1000
 love.graphics.draw(block.sprite,mPosX, mPosY,0,1,1)
 
+
 end
 
-if love.keyboard.isDown("lshift") and creatorTools.regularizer >= 0 then -- level building script, originally human made, but was remade by AI (gemini); i hate doing this; but it was requiring 900+ lines of code to work
+if love.keyboard.isDown("lshift") and creatorTools.regularizer >= 0 and menu.screen == 3 and creatorTools.mode == 1 then -- level building script, originally human made, but was remade by AI (gemini); i hate doing this; but it was requiring 900+ lines of code to work
     local colWidth = 60
     local rowHeight = 25
     local startX = 180
@@ -208,6 +214,7 @@ if love.keyboard.isDown("lshift") and creatorTools.regularizer >= 0 then -- leve
 
             if mPosX >= x and mPosX < x + colWidth and mPosY >= y and mPosY < y + rowHeight then
                 creatorTools.blockID = creatorTools.blockID + 1
+                creatorTools.spriteID = creatorTools.spriteID + 1
                 creatorTools.regularizer = creatorTools.regularizer - dt
                 
                 block.hitboxupn[creatorTools.blockID] = world:newRectangleCollider(x, y - 5, colWidth, 10)
@@ -217,7 +224,8 @@ if love.keyboard.isDown("lshift") and creatorTools.regularizer >= 0 then -- leve
                 block.hitboxdownn[creatorTools.blockID] = world:newRectangleCollider(x, y + 5, colWidth, 10)
                 block.hitboxdownn[creatorTools.blockID]:setCollisionClass("blockdown")
                 block.hitboxdownn[creatorTools.blockID]:setType("static")
-
+decorX[creatorTools.spriteID] = x
+decorY[creatorTools.spriteID] = y
                 
                 
                 print("block.hitboxupn" .. creatorTools.blockID .. " = world:newRectangleCollider(" .. x .. ", " .. y .. "-5, 60, 10)")
@@ -232,6 +240,39 @@ if love.keyboard.isDown("lshift") and creatorTools.regularizer >= 0 then -- leve
         end
     end
 end
+
+if love.keyboard.isDown("lshift") and creatorTools.regularizer >= 0 and menu.screen == 3 and creatorTools.mode == 2 then -- level building script, originally human made, but was remade by AI (gemini); i hate doing this; but it was requiring 900+ lines of code to work
+    local clWidth = 60
+    local rwHeight = 25
+    local stX = 180
+    local stY = 140
+
+    for j = 0, 6 do
+        for i = 0, 6 do
+            local xX = stX + (j * clWidth)
+            local yY = stY + (i * rwHeight)
+
+            if mPosX >= xX and mPosX < xX + clWidth and mPosY >= yY and mPosY < yY + rwHeight then
+                creatorTools.spriteID = creatorTools.spriteID + 1
+                creatorTools.regularizer = creatorTools.regularizer - dt
+
+decorX[creatorTools.spriteID] = xX
+decorY[creatorTools.spriteID] = yY
+                
+                
+                print("if i == " .. creatorTools.spriteID .. " then")
+                print("love.graphics.draw(block.sprite,"..xX.."," ..yY..",0,1,1)")
+                print("end")
+
+                
+                break 
+            end
+        end
+    end
+end
+
+
+
   if creatorTools.regularizer <= 0 and not love.keyboard.isDown("lshift") then
     creatorTools.regularizer = 0.002
   end
