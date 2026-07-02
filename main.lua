@@ -83,7 +83,8 @@ ball = {}
   
 
 
-
+  local timePressed = .003
+  local songChanged = 0
 
 setter = {}
 setter.isDone = false
@@ -121,6 +122,7 @@ sfx.laser = love.audio.newSource('sounds/laser.wav', "static")
 
 powerups = {}
 powerups.chance = 0
+powerups.message = {}
 
 speed = {}
 speed = 100
@@ -146,7 +148,7 @@ menu.created = 0
 block.selection = math.random(1,4)
 igclicked = 0
 isPaused = false
-paddle.moveable = "mouse"
+paddle.moveable = "keyboard"
 pdp = false
 pdpa = false
 pdpb = false
@@ -170,6 +172,7 @@ level = {}
  level.detect = 0
 level.unlocked = 1
 level.latest = 1
+level.drawable = 1
 
 settings = {}
 pmstatus = 0
@@ -177,6 +180,7 @@ pmtimer = .01
 blockEscape = 0
 destroyer = {}
 destroyer.created = 0
+
 creatorTools = {}
 creatorTools.status = false
 creatorTools.msg = "false"
@@ -226,13 +230,11 @@ end
 
 
 function love.update(dt) ----------------------------------------------------------------------------
-
-
+if keypressed("p") then
+ print(creatorTools.spriteID..creatorTools.blockID)
+end
   if laser.hitbox then
 lPosX,lPosY = laser.hitbox:getPosition()
-end
-  if paddle.moveable == "keyboard" and paddle.hitbox2 and menu.screen == 3 then
-love.mouse.setPosition(pPosX,pPosY)
 end
 
 if powerups.laser == true and pwl >= 0 then
@@ -365,10 +367,13 @@ end
 
 if sdt <= 0 then
 os.remove("save-values")
+level.unlocked = 1
 end
 
 if love.keyboard.isDown("lshift") and ctu == 0.02 and creatorTools.status == false then
   creatorTools.spriteID = 0
+  creatorTools.blockID = 0
+
 creatorTools.status = true
 if creatorTools.mode == 1 then
 creatorTools.msg = "build"
@@ -473,10 +478,10 @@ paddle.hitbox2:destroy()
 paddle.hitbox3:destroy()
   end
 
-if paddle.hitbox1 and pPosX >= 700 then
+if paddle.hitbox1 and pPosX >= 700 and pPosX <= 10000 then
 pdPosX = 700
 end
-if paddle.hitbox1 and pPosX <= 0 then
+if paddle.hitbox1 and pPosX <= 0 and pPosX <= -10000 then
 pdPosX = 0
 end
 paddle.hitbox1 = world:newRectangleCollider(mPosX-30,410+60, 20,20)
@@ -582,12 +587,12 @@ paddle.hitbox2:setLinearVelocity(-400,0)
 paddle.hitbox3:setLinearVelocity(-400,0)
 setter.hitbox:setLinearVelocity(-400,0)
 end
+
 if love.keyboard.isDown("d") then
 paddle.hitbox1:setLinearVelocity(400,0)
 paddle.hitbox2:setLinearVelocity(400,0)
 paddle.hitbox3:setLinearVelocity(400,0)
 setter.hitbox:setLinearVelocity(400,0)
-
 
 end
 if not love.keyboard.isDown("a") and not love.keyboard.isDown("d") or love.keyboard.isDown("a") and love.keyboard.isDown("d") then
@@ -744,7 +749,41 @@ end
 print("----- copy the following -----")
 ctpm = ctpm - dt
 end
+
+
+if menu.screen == 4 and songChanged == false then
+    if music.one:isPlaying() then
+      if keypressed("n") then
+      love.audio.stop()
+      music.two:play()
+       songChanged = true
+      end
+    end
+          if music.two:isPlaying() then
+      if keypressed("n") then
+      love.audio.stop()
+      music.one:play()
+       songChanged = true
+      end
+    end
+  end
+
+
+  if not keypressed("n") and menu.screen == 4 then
+songChanged = false
+  end
+
+
 world:update(dt)
+end
+function keypressed(key)
+
+if love.keyboard.isDown(key) == true and timePressed == .003 then
+timePressed = timePressed - 1
+return true
+elseif not love.keyboard.isDown(key) then
+  timePressed = .003
+end
 end
 
 function saveGame()
@@ -815,9 +854,6 @@ end
 if menu.screen == 3 and powerups.enlarge == true then
 love.graphics.draw(sprites.paddleEnlarge,pPosX-50,460,0,1,1)
 end
-if powerups.laser == true and laser.draw == 1 then
-love.graphics.draw(sprites.laser,lPosX,lPosY,0,3,3,4,4)
-end
 
 end
 if creatorTools.status == true then
@@ -834,12 +870,19 @@ end
       if powerups.exist == true and menu.screen == 3 then
 love.graphics.draw(sprites.powerups,pwPosX ,pwPosY,0,2,2,4,4)
  end
-  if love.keyboard.isDown("up") then
+  if keypressed("up") then
 world:draw()
 end
+if powerups.laser == true and laser.draw == 1 then
+love.graphics.draw(sprites.laser,lPosX,lPosY,0,3,3,4,4)
+end
+
 if level.detect then
-if level.detect >= 8 and level.detect <= 999 and menu.screen == 3 then
-world:draw()
+
+if level.drawable == level.detect and menu.screen == 3 then
+
+elseif menu.screen == 3 then
+  world:draw()
 end
 end
 
@@ -852,6 +895,8 @@ end
 
 -- TODO: 
 
+
+
 -- overhaul grafico (en proceso )
 -- que falta del overhaul = shaders leves, remasterizar el menu de configuraciones, terminar los 
 -- niveles de decorar, añadir cuadro guia para creador de niveles
@@ -861,3 +906,8 @@ end
 -- debuffs
 
 -- MOBILE SUPPORT
+
+-- Idea: para el creador de niveles, hacer una lista que indexe las posiciones de cada bloque,
+-- y asi hacer un script que genere los niveles basados en esos datos
+-- Posible contra: necesitas 2 comandos para un bloque; no uno; por lo que tendrias que hacer un
+-- lector que lea en numeros impares

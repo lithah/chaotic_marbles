@@ -126,7 +126,7 @@ sfx.click:play()
 end
 if love.keyboard.isDown("r") and level.unlocked >= 14 and menu.screen == 2 or level.unlocked >= 14 and love.mouse.isDown(1) and menu.screen == 2 and mPosX >= 470 and mPosX <=560 and mPosY >=190 and mPosY <= 250 then
   menu.screen = 3
-gen.levelGen(9)
+gen.levelGen(14)
 level.latest = 9
 sfx.click:play()
 end
@@ -219,7 +219,7 @@ if love.keyboard.isDown("lshift") and creatorTools.regularizer >= 0 and menu.scr
 
             if mPosX >= x and mPosX < x + colWidth and mPosY >= y and mPosY < y + rowHeight then
                 creatorTools.blockID = creatorTools.blockID + 1
-                creatorTools.spriteID = creatorTools.spriteID + 1
+ --               creatorTools.spriteID = creatorTools.spriteID + 1
                 creatorTools.regularizer = creatorTools.regularizer - dt
                 
                 block.hitboxupn[creatorTools.blockID] = world:newRectangleCollider(x, y - 5, colWidth, 10)
@@ -229,8 +229,8 @@ if love.keyboard.isDown("lshift") and creatorTools.regularizer >= 0 and menu.scr
                 block.hitboxdownn[creatorTools.blockID] = world:newRectangleCollider(x, y + 5, colWidth, 10)
                 block.hitboxdownn[creatorTools.blockID]:setCollisionClass("blockdown")
                 block.hitboxdownn[creatorTools.blockID]:setType("static")
-decorX[creatorTools.spriteID] = x
-decorY[creatorTools.spriteID] = y
+--decorX[creatorTools.spriteID] = x
+--decorY[creatorTools.spriteID] = y
                 
                 
                 print("block.hitboxupn" .. creatorTools.blockID .. " = world:newRectangleCollider(" .. x .. ", " .. y .. "-5, 60, 10)")

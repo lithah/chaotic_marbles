@@ -10,6 +10,7 @@ block.ubicationTop2 = {315-30,290-30,265-30,240-30,215-30,190-30,165-30,140-30,0
 
 
  if level.detect == 1 and menu.screen == 3 then
+   level.drawable = 1
     for i = 1, blockTotal do
     local existKey = "blockl" .. i .. "exist"
  if _G[existKey] == true then
@@ -38,6 +39,7 @@ end
 end
 end
  if level.detect == 2 and menu.screen == 3 then
+   level.drawable = 2
     for i = 1, blockTotal do
     local existKey = "blockl" .. i .. "exist"
  if _G[existKey] == true then
@@ -64,6 +66,7 @@ end
 end
 
 if level.detect == 3 and menu.screen == 3 then
+   level.drawable = 3
     for i = 1, blockTotal do
     local existKey = "blockl" .. i .. "exist"
  if _G[existKey] == true then
@@ -94,6 +97,7 @@ end
 end
 
 if level.detect == 4 and menu.screen == 3 then
+   level.drawable = 4
      for i = 1, blockTotal do
     local existKey = "blockl" .. i .. "exist"
  if _G[existKey] == true then
@@ -159,6 +163,7 @@ end
 end
 end
 if level.detect == 5 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 5
      for i = 1, blockTotal do --this defines how many blocks there will be drawn
     local existKey = "blockl" .. i .. "exist"
 if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
@@ -229,6 +234,7 @@ end
 end
 
 if level.detect == 6 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 6
      for i = 1, blockTotal do --this defines how many blocks there will be drawn
     local existKey = "blockl" .. i .. "exist"
 if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
@@ -316,6 +322,7 @@ end
 end
 
 if level.detect == 7 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 7
      for i = 1, blockTotal do --this defines how many blocks there will be drawn
     local existKey = "blockl" .. i .. "exist"
 if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
@@ -394,6 +401,1078 @@ end
 end
 end
 
+if level.detect == 8 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 8
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,300,165,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,300,240,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,300,265,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,300,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,420,165,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,420,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,420,265,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,420,290,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,190,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,360,190,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,480,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,240,240,0,1,1)
+end
+if i == 23 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 24 then
+love.graphics.draw(block.sprite,480,240,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 10 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 10
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,180,190,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,360,190,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,540,190,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,180,240,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,300,240,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,420,240,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,540,240,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,240,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,480,265,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+
+ 
+end
+end
+end
+
+if level.detect == 11 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 11
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,360,165,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,540,165,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,240,190,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,360,190,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,540,190,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,180,215,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,480,215,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,240,240,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,420,240,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,540,240,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,240,265,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,420,265,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+if level.detect == 9 and menu.screen == 3 then -- define the level to be drawn
+   level.drawable = 9
+     for i = 1, blockTotal do --this defines how many blocks there will be drawn
+    local existKey = "blockl" .. i .. "exist"
+if _G[existKey] == true then -- this puts the sprites on a table with existKey, so they are able to be destroyed
+   --copy the console's output here:
+if i == 1 then
+love.graphics.draw(block.sprite,180,140,0,1,1)
+end
+if i == 2 then
+love.graphics.draw(block.sprite,240,140,0,1,1)
+end
+if i == 3 then
+love.graphics.draw(block.sprite,300,140,0,1,1)
+end
+if i == 4 then
+love.graphics.draw(block.sprite,360,140,0,1,1)
+end
+if i == 5 then
+love.graphics.draw(block.sprite,420,140,0,1,1)
+end
+if i == 6 then
+love.graphics.draw(block.sprite,480,140,0,1,1)
+end
+if i == 7 then
+love.graphics.draw(block.sprite,540,140,0,1,1)
+end
+if i == 8 then
+love.graphics.draw(block.sprite,180,265,0,1,1)
+end
+if i == 9 then
+love.graphics.draw(block.sprite,180,290,0,1,1)
+end
+if i == 10 then
+love.graphics.draw(block.sprite,240,290,0,1,1)
+end
+if i == 11 then
+love.graphics.draw(block.sprite,480,290,0,1,1)
+end
+if i == 12 then
+love.graphics.draw(block.sprite,540,290,0,1,1)
+end
+if i == 13 then
+love.graphics.draw(block.sprite,540,265,0,1,1)
+end
+if i == 14 then
+love.graphics.draw(block.sprite,360,290,0,1,1)
+end
+if i == 15 then
+love.graphics.draw(block.sprite,360,265,0,1,1)
+end
+if i == 16 then
+love.graphics.draw(block.sprite,360,240,0,1,1)
+end
+if i == 17 then
+love.graphics.draw(block.sprite,300,215,0,1,1)
+end
+if i == 18 then
+love.graphics.draw(block.sprite,300,190,0,1,1)
+end
+if i == 19 then
+love.graphics.draw(block.sprite,240,165,0,1,1)
+end
+if i == 20 then
+love.graphics.draw(block.sprite,420,215,0,1,1)
+end
+if i == 21 then
+love.graphics.draw(block.sprite,420,190,0,1,1)
+end
+if i == 22 then
+love.graphics.draw(block.sprite,480,165,0,1,1)
+end
+ 
+end
+end
+end
+
+
 love.graphics.setColor(1,1,1,1)-- put this after the end chain
 end
 return w
@@ -401,6 +1480,7 @@ return w
 
 
 --if level.detect == ¿? and menu.screen == 3 then -- define the level to be drawn
+--level.drawable = true
 --     for i = 1, blockTotal do --this defines how many blocks there will be drawn
 --    local existKey = "blockl" .. i .. "exist"
 --if _G[existKey] == true then -- this puts them on a table with the existKey, so they are able to be destroyed
@@ -409,10 +1489,6 @@ return w
 --end
 --end
 --end
-
-
-
-
 
 
 
