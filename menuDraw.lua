@@ -145,7 +145,7 @@ if i >=6 and i <=10 then
     stage.numerator = love.graphics.print("-"..i.."-",stage.posX[i],stage.posY[6])
     end
                 if i >=31 and i <=35 then
-    stage.numerator = love.graphics.print("-"..i.."-",stage.posX[i],stage.posY[7])
+    stage.numerator = love.graphics.print("-?-",stage.posX[i],stage.posY[7])
     end
   end
   

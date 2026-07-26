@@ -205,7 +205,7 @@ msd = .002 -- Music and Sound Definer; prevents spamming of the key; a workaroun
 lip = .002 -- Laser Is Pressed; prevents spamming of the key; a workaround used all round this 
 --game because i haven't figured another way to do it lol.
 
-mim = false --Music is muted
+mim = "false" --Music is muted
 powerups.value = 0
 powerups.counter = 0
 powerups.exist = false
@@ -230,7 +230,10 @@ end
 
 
 function love.update(dt) ----------------------------------------------------------------------------
-if keypressed("p") then
+
+
+
+  if keypressed("p") then
  print(creatorTools.spriteID..creatorTools.blockID)
 end
   if laser.hitbox then
@@ -312,15 +315,15 @@ end
 
 bufflogic.PowerUpLogic()
 
-  if love.keyboard.isDown("m") and msd >= 0 and mim == true then
+  if love.keyboard.isDown("m") and msd >= 0 and mim == "true" then
  love.audio.setVolume(0)
 msd = msd - dt
-mim = false
+mim = "false"
 end
- if love.keyboard.isDown("m") and msd >= 0 and mim == false then
+ if love.keyboard.isDown("m") and msd >= 0 and mim == "false" then
 love.audio.setVolume(1)
 msd = msd - dt
-mim = true
+mim = "true"
  end
 if msd <= 0 and not love.keyboard.isDown("m") then
 msd = .002
@@ -790,17 +793,17 @@ function saveGame()
 
   local f= io.open("save-values","w")
 if f then
-  --level unlocked
-  f:write(tostring(level.unlocked))
+  f:write(tostring(level.unlocked))   --level unlocked
    f:write("\n")
-   --score
- f:write(tostring(score))
+
+ f:write(tostring(score))    --score
     f:write("\n")
-    --lives
-     f:write(tostring(lives))
+
+       f:write(tostring(lives))     --lives
     f:write("\n")
-    --paddle movement config
-       f:write(tostring(paddle.moveable))
+
+
+       f:write(tostring(paddle.moveable))     --paddle movement config
   f:close()
 else
   error("Failed to open save file :c")
@@ -810,9 +813,13 @@ function loadGame()
   local f= io.open("save-values","r")
 if f then
 local levelread = f:read("*l")
+print(levelread)
 local scoreread = f:read("*l")
+print(scoreread)
 local liveread = f:read("*l")
+print(liveread)
 local paddleconfig = f:read("*l")
+print(paddleconfig)
 level.unlocked = (tonumber(levelread))
 score = (tonumber(scoreread))
 lives = (tonumber(liveread))
@@ -901,7 +908,7 @@ end
 -- que falta del overhaul = shaders leves, remasterizar el menu de configuraciones, terminar los 
 -- niveles de decorar, añadir cuadro guia para creador de niveles
 
--- mas niveles. 
+-- 30 niveles. (y los demas custom)
 
 -- debuffs
 
